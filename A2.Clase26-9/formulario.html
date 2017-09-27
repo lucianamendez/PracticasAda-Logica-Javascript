@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Logueo</title>
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Saira+Condensed" rel="stylesheet">
+		<style>
+			body{
+				background-image:url(trifuerza.jpg);
+				background-size:cover;
+			}
+			#centrado{
+				margin-top:25vh;
+				width:40vw;
+				height:20vw;
+				background:-webkit-radial-gradient(center, rgba(75, 135, 4,0.9), rgba(3, 46, 24,0.9));
+				padding:1.5em 2em;
+				border-radius:50px;
+				box-shadow:3px 2px 4px #333333;
+				color:#D6C400;
+				font-family: 'Saira Condensed', sans-serif;
+				font-size:0.8vw;
+				letter-spacing:0.1vw;
+			}
+			h1{
+			
+			}
+
+		</style>
+		<script language="javascript">
+		var contador = 0;
+		var nombre, clave;
+			
+		function comprobar(form){
+		if (form.nombre.value == "pepe" && form.clave.value == "123"){
+			alert("Correcto")}
+			else if (form.nombre.value!="pepe" || form.clave.value != "123" && contador<3){
+				contador++;
+				alert("Usuario o contraseña incorrecta. Error: "+contador+" de 3")}
+		while (contador==3) {alert("BLOQUEADO")}
+			}
+		/*while (form.nombre.value!="pepe" || form.clave.value != "123" && contador<3){
+			contador++;
+			alert("Usuario o contraseña incorrecta. Error:"+contador+" de 3")}
+		if (contador==3) {
+			alert("BLOQUEADO")
+		} else if (form.nombre.value == "pepe" && form.clave.value == "123"){
+			alert("Correcto")
+					}}*/
+		</script>
+		
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center">
+					<div id="centrado">
+						<form class="form-group" name="logueo">
+							<h1>Ingrese su usuario y contraseña</h1>
+							<label for="nombre">Usuario</label>
+							<input class="form-control" minlength="3" maxlength="10" type="text" name="nombre" placeholder="Escribí tu nombre" required>
+							<br>
+							<label for="clave">Contraseña</label>
+							<input class="form-control" minlength="1" maxlength="10" type="password" name="clave" placeholder="Escribí tu contraseña" required>
+							<br>
+							<button type="button" class="btn btn-lg btn-success" onclick="comprobar(this.form)"<span class="glyphicon glyphicon-circle-arrow-right"></span> Enviar</a></button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
