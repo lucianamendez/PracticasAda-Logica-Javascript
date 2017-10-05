@@ -6,7 +6,9 @@
 //c. Si lleva menos de 5 años pero más que 3 se le aplica un aumento del 5%.
 //d. Si lleva menos de 3 años se le aplica un aumento del 3%
 
-var sueldo=40000
+
+var sueldo=40000;
+var aumento;
 var anios=parseInt(prompt("Años trabajados?"));
 
 if (anios<3){
