@@ -9,10 +9,11 @@ Crear un bloque de código que permita determinar si:
 
 x = ["a","l","f","a"];
 y = ["a","l","f","a","j","o","r"];
+
 var contador=0;
 
 
-if (x==y){
+if (x.length == y.length){
 	console.log("Son iguales")
 } else {console.log("Son arreglos distintos.")}
 
@@ -25,11 +26,19 @@ if (x.length>y.length){
 
 
 for (var i=0; i<x.length; i++){
-	for (var i=0; i<y.length; i++){
-		if (x[i]==y[i]){
-			contador=contador+1;
+	
+	for (var j=0; j<y.length; j++){
+		console.log("Vuelta "+i+" Vuelta "+j);
+		console.log(x[i]);
+		console.log(y[j]);
+		if (x[i]==y[j]){
+			contador++;
+			console.log(">>>"+x[i]+" coincide con "+y[j]);
+
 		}
 	}
+
 }
+
 
 console.log("Tienen en comun "+contador+" letras")
