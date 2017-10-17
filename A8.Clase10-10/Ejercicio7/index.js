@@ -11,7 +11,7 @@ var datos1 = ["Fido","Gomez",26,15000.78,true];
 var datos2 = ["Gervasio","Fernandez",32,28.550,false];
 
 var espacio=" ";
-
+/*
 if (datos1[2]>datos2[2]){
 	console.log(datos1[0]+espacio+datos1[1]+" es mayor");
 } else if (datos1[2]<datos2[2]){
@@ -30,3 +30,31 @@ console.log(aumento);
 var sueldoAumentado=(datos1[3]+aumento).toFixed(2);
 
 console.log("El sueldo de "+datos1[0]+espacio+datos1[1]+" con el aumento equivale a "+sueldoAumentado);
+*/
+
+var i;
+var aumento;
+var sueldoAumentado;
+
+for (i=0; i<datos1.length; i++){
+	if (Number.isInteger(datos1[i]) && (Number.isInteger(datos2[i]))){
+		if (datos1[i]>datos2[i]){
+			console.log("Fido es mayor");
+		} else {console.log("Gervasio es mayor");}
+	}
+	else if(typeof(datos1[i]) == "boolean" && typeof(datos2[i]) == "boolean"){
+		if (datos1[i]){
+			console.log("Fido esta casado")
+		}
+		if (datos2[i] === true){
+			console.log("Gervasio esta casado")
+		}
+	}
+	else if(typeof(datos1[i]) == "number" && typeof(datos2[i]) == "number"){
+		if((Number.isInteger(datos1[i])  == false) && (Number.isInteger(datos2[i])  == false)){
+			aumento=datos2[i]*0.125;
+			sueldoAumentado=(datos1[i]+aumento).toFixed(2);
+			console.log("El sueldo de Fido con el aumento equivale a "+sueldoAumentado);
+		}
+	}
+}
